@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Epitope Binning Tool</title>
+    <<link href="style/layout.css" rel= "stylesheet"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about">About</a></li>
+                <li><a href="#use">How to Use</a></li>
+                <li><a href="#visualization">Visualization</a></li>
+                <li><a href="#bookmark">Bookmark</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- jumbotron starts-->
+<div class="jumbotron">
+
+
+            <div class="container">
+                <img src="images/logo1.png" width="150" height="50"/>
+                <img src="images/logo2.png" width="250" height="250" align="right" />
+                <br>
+                <br>
+                <br>
+                <h1>Epitope Binning Tool </h1>
+                <small>Version 1.0.2</small><br>
+                <br>
+                <!--<h5 align="center"> <a  href="download/AAD_poster.pptx" download="RSS_slides">Download slides with data presented to the American Academy of Dermatologists 2017 meeting</a></h5> -->
+
+            </div>
+<p> <h3> Site under construction <h3> </p> 
+</div>
+<!-- jumbotron ends-->
+    
+<!-- About -->
+<div id="about">
+    <header> <h3>About</h3></header>
+    <p>The Epitope Binning Analysis Tool is for analyzing High-Throughput Epitope Binning Assays. Using the raw sensogram data the tool is able to determine if the pair of antibodies are blocking or non-blocking in both sandwich or tandem assays. Depending on the blocking profile the tool segregate antibodies in different bins. Different interactive visualizations are created to show the allocation of antibodies in different bins.
+    </p>
+</div>
+
+<!-- About ends here -->
+
+
+<!--How to Use starts here -->
+<div id="use">
+    <h4>Start the App:</h4>
+    <p>The app is hosted at Domino cloud service. The user has to log-in to Domino to get the app running. To log-in user has to use BMS user name and password in the log in page of  <a href="https://domino.aws.bms.com/login" target="_blank">Domino website</a> . While logged into Domino click
+<a href="https://domino.aws.bms.com/u/RWC_BLD_DataScienceBioinformatics/EBATool-ggplot/app" target="_blank">here</a> to run the app.
+    </p>
+    <h4>Upload Required Files:</h4>
+    
+    <p>
+      Raw sensogram data in .csv format extracted form Data Miner &trade;
+    </p>
+    <figure>
+        <img src="images/raw1a.jpg" height="350" width="625">
+    </figure>
+    <h4>Legend Sensogram Data:</h4>
+    <p>
+   Legend sensogram data in .csv format extracted form Data Miner &trade; . The column name ,<b>first Ab</b> and <b>second Ab</b> should be present. The legend file needs to have a column called "Sensor" or "Sensor Location" that matches the "Sensor Location" column in the raw datafile.	The other column that maps antibodies to assays is the "Cycle" column in the legend that matches the "Cycle Number" column in the raw data.
+    </p>
+    
+     <figure>
+        <img src="images/legend1.jpg" height="350" width="625">
+    </figure> 
+    <h4> Sequence Data(Optional):</h4>
+    <p>
+      User can upload sequence data of the antibodies as a .csv file for subsequent bin-wise Multi-Sequence-Analysis(MSA).
+    </p>
+    
+     <figure>
+        <img src="images/seq1.jpg" height="350" width="625">
+    </figure>
+    <br>
+    <br>
+      <figure>
+        <img src="images/shot2.jpg" height="350" width="625">
+    </figure>   
+    <h4>Click the Process button):</h4>
+    <p>
+    After completion of the required file upload, the user has to click on the <b>Process</b> button to initiate analysis. During the analysis user will see moving gear on the screen. When the process is complete there will be  sensogram of the first pair of Antibody on the upper left quadrant on the screen. There will be green curves for binding pairs, red curves for non-binding pairs and blue curves for the ambiguous pairs.The binding curves will be displayed on the upper right quadrant, non-binding curves will on displayed on the lower right quadrant and ambiguous samples will be displayed on lower left quadrant of the screen. User can zoom in any part of the curve by holding the left button of the mouse and brusing over the area. To zoom out  user has to double click on the sensogram.User can see the specific time point and other related information when they hover over anypoint on the curve. There will be an yellow highlighted area in the windows of the sensogram that show the selected area of interest on the curve. Users can adjust this window using <b>Range-min</b> and <b>Range-max</b> input fields.
+    </p>
+    <h4>Update Range button:</h4>
+    <p>
+    After inserting appropriate minimum and maximum ranges in Range fields user has to click on the <b>Update Range</b> button to move the window of interest to the desired position.
+    </p>
+    <h4>Menu button:</h4>
+    <p>
+    Menu button can be found on the upper margin of the main screen just below the title bar.It is a rounded blue button with a white gear sign at the center. Click on this button to open the menu options. If anything is changed in the menu then user has to click on <b>Apply</b> to make the changes happen.
+    </p>
+          <figure>
+        <img src="images/shot3.jpg" height="350" width="625">
+    </figure> 
+    <br>
+    <br>
+    User can choose from three analysis method for their current project. Default is the AUC method.
+    <h4>AUC:</h4>
+    <p>
+    In this method area under the curve of the samples are calculated and comapred with the control to decided binding profile. The curves that is between $mean \pm 2*SD$ of binders and non-binders are marked as ambiguous.
+    </p>
+    <h4>Kinetic:</h4>
+    <p>
+    In this method goodness-of-fit between decaying exponential model and linear model is evaluated by using AIC(Akaike Information Critera) or BIC(Bayesian Information Critera) to determine binding and non-binding curves. User can adjust the decision boundary using <b>Upper User Factor</b> and <b>Lower User Factor</b> .
+    </p>
+    <h4>Z-score:</h4>
+    <p>
+    This is a residual based method. It determies binding and non-binding by calculating how many data points are above a straight secant line between the beginning and end of the region of interest.User can adjust the decision boundary using <b>Upper User Factor</b> and <b>Lower User Factor</b> . 
+    </p>
+    
+    <h4>Select sample:</h4>
+    <p>
+    User can select single or multiple Antibodies from First Antibody and Second Antibody to plot.
+    </p>
+    <h4>Zero Curve:</h4>
+    <p>
+    For ease of visualization user can bring down all the plotted curves to a point  in x-axis.
+    </p>
+    <h4>Kinetic Model Scoring Method:</h4>
+    <p>
+    User can choose between AIC(Akaike Information Critera) and BIC(Bayesian Information Critera) when using kinetic method.
+    </p>
+    <h4>Kscore calc Order:</h4>
+    <p>
+    In kinetic method user can decide the order of claculation. If <b>IC, then negative slope</b> is choosen the tool will take deciscion first depending on the IC(AIC/BIC) score then will take account of the negative slope to decided non-binding. Reverse is true if the users choose <b>Negative slope,then IC</b> .
+    </p>
+    <h4>Mimimum amplitude for binding:</h4>
+    <p>
+    User can provide minimum amplitude for binding curve if wishes.
+    </p>
+     <h4><i>Check all statistics at a Glance</i>:</h4>
+     <p>
+     <b>Binding category</b> tab shows all the Antibody pairs selected for plotting in a tabulated form with all corresponding scores for different available methods. Users can download the table in .csv format or as PDF. There is also option for copying the table into the clipboard or send it directly to printer. Search option in this tab helps to find a specific antibody from the table. 
+     </p>
+  
+</div>
+<!-- How to ends here -->
+
+
+<!-- Visualization start here -->
+
+<div id="visualization">
+
+<h3>Tabs for Different Visualizations:</h3>
+    <p>
+    Heatmap, NodePlot, Networkplot, circlePlot, DendroPlot, MSA are the tabs for visualizing the binned data as different plots as the name of the tab indicates. MSA tab will only be visible when a sequence file is uploaded.
+    </p>
+    
+  <h4>HeatMap:</h4>
+  <p>
+  Clicking on the tab actives the window for heat map. User can select clustering method for plotting the Heat Map. The choice for the clustering method includes ward.D, ward.D2, single, Complete, average, mcquitty, median, Centroid. The default choice is ward.D2. General hovering over heat map reveals tools for the heatmap itself on the top right corner of the heat map. User can download the  heatmap as png image with the camera tool, zoom any specfic regeion of heat map using the magnifying glass tool, pan the plot with pan tool, zoom in with Plus sign and zoom out with minus sign and bring back to the original size using home tool. Toggle Spike line helps to identify antibody names row-wise and column-wise.  Hovering over a specific cell of heat map will display name of the antibody pairs and which bin it belongs. For binding instances it will be 1, for non-binding instances it will -1 and 0 for ambiguous instances. Clicking on any of the cell of heatmap will highlight it with black color and the corrosponding curve in sensogram will also be highlighted with black color.
+  </p>
+  <p>
+  User can remove Antibody from the row, column or from both row and column  by selecting the Antibody from the corrosponding field's dropdown menu. After selecting the antibdy or antibodies user has to press <b>Go</b> button to remove in from the heatmap. This removal will also have effetct on all other visaulization options.<b>Reset</b> button will bring the heat map to its earlier state.
+  </p>
+   <p>
+  By the side of the heatmap the heatmaptable shows all the antibody pair with its bin allocation with color coding. Red is for non-binding and green is for binding. If there is mismatch between row-wise and column-wise binning that antibody pair will be at the top of the table and will be in brown color. User can overide the binning decision made by the selected algorithm by entering 1 to make binding and -1 to make non-binding and then clicking on the <b>Override</b> button. <b>Default</b> button can undo the made chages.  Heat map data can be download as .csv, .xlsx and html formats. 
+  </p>
+  <h4>NodePlot:</h4>
+  <p>
+  Clicking on the <b>NodePlot</b> tab opens the window for NodePlot. It is actually a representation of Network Plot. Nodes representing the antidodies belonging to the same bin will have same color. This color coding will be same for the rest of the plots. User can select clustering algorithm between fastgreedy and blockprofile. Blockprofile is a custom built algorithm which depend on the blocking profile of the antibodies. User can select differnt layout for plotting the Node Plot. Number on communities in different algorithm are shown on  the upper right corner of the tab.
+  </p>
+  <h4>NetworkPlot:</h4>
+  <p>
+  It is an interactive plot. User can drag the nodes, select nodes by group or id. <b>Reset to Defalut</b> will bring the plot to its initial state. The network plot can be downloaded as html file which can be opened in any browser with the same interactivity. Bin allocation data can also be download as cSv with the help of <b>Download Bin Allocation</b> button. <b>Edit</b> button enables users to remove any node irreversibly. Hovering over anyone of the nodes show the bin allocation and clicking on anyone of the bin information will take the users to the MSA tab showing the sequence of the corresponding bin if sequence data was uploaded.
+  </p>
+  <h4>CirclePlot:</h4>
+  <p>
+  The circle plot shows the bin allocation around a circle with cords showing the connected antibodies. Hovering over the names of antibodies highlights the connected nodes. User can control font size, width and height, padding and tension of the plot interactively using the sliders on the left. This plot is also downloadable as html.
+  </p>
+  <h4>DendroPlot:</h4>
+  <p>
+  In the combined view antibodies from both row and column are shown in hierarchical order using the fastgreedy algorithm as clustering algorithm. In row view dendrogram of the row antibodies are shown and in column view the dendrogram of  antibodies of the columns are shown. In row view  and column view user can cut the dendrogram at any level using single left click of the mouse while holding the horizontal dotted line at the desired level. Rapid double left click on the plot will return it to back it original state. If the user selects Blockprofile in Nodeplot tab then Dendroplot tab will be blank.
+  </p>
+  <h4>MSA:</h4>
+  <p>
+  This is a conditional tab. This tab appears only when sequence data is uploaded. This tab shows the MSA of CDR1,CDR2,CDR3 and full chain of both heavy and light chain. User can explore binwise MSA or MSA of all the antibodies. In binwise visualization bin allocation is added as suffix to the antibody name. User can choose to display only the differences among the strings or the complete strings. User can select to see color aligned or back and wihite strings.
+  </p>
+  <h4><i>Portable Heat map</i>:</h4>  
+    <p> For ease of analysis there is a portable heatmap window collapsed just below the sensogram windows. User can expaned it by clicking on the plus sign at the right corner of the collapsed window. This window can be moved around the different part on the screen. Expanded window can be collapsed againg by clicking the minus sign at the rigth corner of the window. </p>
+    
+     <figure>
+        <img src="images/shot8.jpg" height="350" width="625">
+    </figure> 
+   
+    
+</div>
+
+<!--Visualization Ends here -->
+
+<!-- BookMark Ends here -->
+<div id="bookmark">
+<h3>Bookmark:</h3>
+<p>
+User can <b>Bookmark</b>  at any stage of thier anlysis and create a shareable link. Collaborators who have access to the app can open the app using the link with the same settings and parameters and can be on the same page with the user who sent it.
+</p>
+<h4>Align x-axis:</h4>
+<p>In cases where different phases of the curves start at different time due to instrument lag, it can be corrected using <b>Align x-axis</b> button. It is a memory intense process and takes a while to complete.</p>
+
+     <figure>
+        <img src="images/shot7.jpg" height="350" width="625">
+    </figure>
+
+</div>
+
+<!-- BookMark Ends here -->
+<!-- Footer starts here -->
+<footer  class="text-muted">
+    <div class="container">
+
+
+     <p align="center">&copy All site contents are copyrighted</p>
+    <p align="center">Questions or Comments can be sent to </p>
+    <p align="center">Geetha Vasudevan</p>
+    <p align="center"> <a href="mailto:Geetha.Vasudevan@bms.com"> Geetha.Vasudevan@bms.com</a></p>
+        <button class ="btn btn-custom btn-lg pull-right">
+            <a href="#">Back To Top</a>
+        </button>
+    </div>
+</footer>
+
+<!-- Footer Ends here -->
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+   <script>
+       $(function() {
+           $('.nav li a').click(function() {
+               if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                   var target = $(this.hash);
+                   target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                   if (target.length) {
+                       $('html, body').animate({
+                           scrollTop: target.offset().top
+                       }, 1000);
+                       return false;
+                   }
+               }
+           });
+       });
+       // The function actually applying the offset
+       function offsetAnchor() {
+           if (location.hash.length !== 0) {
+               window.scrollTo(window.scrollX, window.scrollY - 100);
+           }
+       }
+
+       // Captures click events of all <a> elements with href starting with #
+       $(document).on('click', 'a[href^="#"]', function(event) {
+           // Click events are captured before hashchanges. Timeout
+           // causes offsetAnchor to be called after the page jump.
+           window.setTimeout(function() {
+               offsetAnchor();
+           }, 0);
+       });
+
+       // Set the offset when entering page with hash present in the url
+       window.setTimeout(offsetAnchor, 0);
+   </script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
